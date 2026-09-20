@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>理发日志 · 2027</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><span class="scissors">✂</span><div><strong>理发日志</strong><small>好发型 · 好心情 · 好日子</small></div></div>
+      <div class="motto">从头开始，把日子过得更好 <span class="avatar">•</span></div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero-grid">
+        <aside class="season-panel">
+          <p class="eyebrow">2027 · 丁未年</p>
+          <h2>二月初二<br><em>龙抬头</em></h2>
+          <p>从一个好发型开始，<br>迎接更好的自己。</p>
+          <div class="seal">万事顺遂</div>
+          <div class="sun"></div>
+          <div class="ridge"></div>
+        </aside>
+
+        <section class="next-panel">
+          <div class="section-kicker">下一次理发</div>
+          <div id="nextDate" class="next-date">2027年3月9日</div>
+          <div id="nextMeta" class="next-meta">星期二　农历二月初二　（龙抬头）</div>
+          <button id="completeBtn" class="primary-btn">✓　标记为已理发</button>
+          <p class="microcopy">按时打理自己，生活也会越来越<span class="microcopy-emphasis">顺</span>。</p>
+          <div id="successNote" class="success-note" role="status" aria-live="polite" hidden>已记录。下一次理发将顺延 21 天。 <button id="undoBtn" class="text-btn">撤销</button></div>
+        </section>
+
+        <aside class="record-panel">
+          <div class="section-kicker">补记实际日期 <button id="helpBtn" class="question">为什么要补记？</button></div>
+          <p>如果你在计划日期以外的时间理发，可以在这里记录实际理发日期。系统会从该日期起，自动按 21 天重新生成之后的计划。</p>
+          <div class="record-row"><label class="sr-only" for="actualDate">实际理发日期</label><input id="actualDate" type="date" value="2027-03-09" min="2027-03-09" max="2028-01-25"><button id="recordBtn">记录并更新后续计划</button></div>
+          <div id="recordNote" class="record-note" role="status" aria-live="polite" hidden>后续计划已更新。</div>
+          <div id="helpNote" class="help-note" hidden>如果实际理发日和计划日不同，就在这里补记。系统会保留历史记录，并从这一天起每 21 天安排下一次。</div>
+          <div class="cycle-settings">
+            <div class="section-kicker">理发周期设置</div>
+            <p>龙抬头起始日保持不变，修改周期后会重新生成全年计划。</p>
+            <div class="cycle-row"><label for="cycleDays">每隔</label><input id="cycleDays" type="number" min="1" max="365" step="1" value="21"><span>天理发一次</span><button id="cycleBtn">更新计划</button></div>
+            <div id="cycleNote" class="record-note" role="status" aria-live="polite" hidden></div>
+          </div>
+          <div class="legend">
+            <div><i class="dot done"></i><b>已完成</b><span>这天已理发，棒！</span></div>
+            <div><i class="dot pending"></i><b>待进行</b><span>按计划的下一次理发日期</span></div>
+            <div><i class="dot missed"></i><b>已错过</b><span>该日期已过，尚未理发</span></div>
+            <div><i class="dot adjusted"></i><b>已调整</b><span>因补记实际日期，后续计划已调整</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="schedule-section">
+        <div class="schedule-heading"><div><span class="calendar-mark">▣</span><h1>2027 年理发计划</h1><span>从 3 月 9 日（农历二月初二 · 龙抬头）开始，每 21 天一次，直到除夕。</span></div><strong id="summary">共 16 次计划　|　最后一次：2028年1月18日</strong></div>
+        <div id="timeline" class="timeline"></div>
+        <div class="footer-quote">理个发，<br>也是生活的一种仪式感。<span>从头开始，<br>每 21 天，遇见更好的自己。</span></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
